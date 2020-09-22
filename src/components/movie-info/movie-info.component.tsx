@@ -36,8 +36,9 @@ const MovieInfo: React.FC<MovieInfoPropsTypes> = (props) => {
 			}}
 		>
 			<div className="movie-info-content">
-				<div className="movie-info-thumnail">
+				<div className="movie-info-thumbnail">
 					<MovieThumbnail
+						clickable={false}
 						image={
 							movie.poster_path
 								? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
@@ -60,15 +61,15 @@ const MovieInfo: React.FC<MovieInfoPropsTypes> = (props) => {
 							value={movie.vote_average * 10}
 						/>
 						<p className="movie-info-score">{movie.vote_average}</p>
-						{directors.length > 1 ? <h3>DIRECTORS</h3> : <h3>DIRECTOR</h3>}
-						{directors.map((director: any, i: number) => (
-							<p key={i} className="movie-info-director">
-								{director.name}
-							</p>
-						))}
 					</div>
-					<FontAwesome className="fa-film" name="film" size="5x" />
+					{directors.length > 1 ? <h3>DIRECTORS</h3> : <h3>DIRECTOR</h3>}
+					{directors.map((director: any, i: number) => (
+						<p key={i} className="movie-info-director">
+							{director.name}
+						</p>
+					))}
 				</div>
+				<FontAwesome className="fa-film" name="film" size="5x" />
 			</div>
 		</div>
 	);

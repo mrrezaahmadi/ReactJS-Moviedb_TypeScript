@@ -7,16 +7,20 @@ import "./movie-thumbnail.styles.scss";
 interface ThumbnailPropsTypes {
 	image?: any;
 	movieId?: number;
-	movieName?: string;
+	clickable?: any;
 }
 
 const Thumbnail: React.FC<ThumbnailPropsTypes> = (props) => {
-	const { image, movieId, movieName } = props;
+	const { image, movieId, clickable } = props;
 	return (
 		<div className="movie-thumbnail">
-			<Link to={{ pathname: `/${movieId}` }}>
+			{clickable ? (
+				<Link to={`/${movieId}`}>
+					<img className="clickable" src={image} alt="movieThumb" />
+				</Link>
+			) : (
 				<img src={image} alt={"movieThumb"} />
-			</Link>
+			)}
 		</div>
 	);
 };

@@ -27,6 +27,7 @@ const MovieList: React.FC<MovieListPropsTypes> = (props) => {
 				{movies
 					.map((movie: any, i: number) => (
 						<MovieThumbnail
+							clickable={true}
 							key={i}
 							image={
 								movie.poster_path
@@ -34,14 +35,14 @@ const MovieList: React.FC<MovieListPropsTypes> = (props) => {
 									: no_image
 							}
 							movieId={movie.id}
-							movieName={movie.original_title}
 						/>
 					))
-					.map((movie: any, i: number) => (
+					.map((movie: any, i: number) => {
+						return (
 						<div className="movie-list-content-element" key={i}>
 							{movie}
 						</div>
-					))}
+					)})}
 			</div>
 		</div>
 	);

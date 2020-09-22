@@ -35,24 +35,22 @@
 	padding: 40px;
 	color: #fff;
 	overflow: hidden;
-}
+	h1 {
+		font-family: "Abel", sans-serif;
+		font-size: 48px;
+		margin: 0;
+	}
 
-.movie-info-text h1 {
-	font-family: "Abel", sans-serif;
-	font-size: 48px;
-	margin: 0;
-}
-
-.movie-info-text h3 {
-	font-size: 16px;
-	line-height: 0;
-	margin-top: 30px;
-}
-
-.movie-info-text p {
-	font-family: "Abel", sans-serif;
-	font-size: 18px;
-	line-height: 26px;
+	h3 {
+		font-size: 16px;
+		line-height: 0;
+		margin-top: 30px;
+	}
+	p {
+		font-family: "Abel", sans-serif;
+		font-size: 18px;
+		line-height: 26px;
+	}
 }
 
 .movie-info-rating {
@@ -106,7 +104,7 @@ meter::-webkit-meter-even-less-good-value {
 		height: auto;
 	}
 
-	.movie-info-nail {
+	.movie-info-thumbnail {
 		width: 100% !important;
 	}
 
