@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Styles
-import "./thumbnail.styles.scss";
+import "./movie-thumbnail.styles.scss";
 
 interface ThumbnailPropsTypes {
 	image?: any;

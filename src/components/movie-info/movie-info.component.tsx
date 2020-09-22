@@ -14,7 +14,7 @@ import "./movie-info.styles.scss";
 import FontAwesome from "react-fontawesome";
 
 // Components
-import Thumbnail from "../thumbnail/thumbnail.component";
+import MovieThumbnail from "../movie-thumbnail/movie-thumbnail.component";
 
 // Images
 import no_image from "../../assets/images/no_image.jpg";
@@ -37,7 +37,7 @@ const MovieInfo: React.FC<MovieInfoPropsTypes> = (props) => {
 		>
 			<div className="movie-info-content">
 				<div className="movie-info-thumnail">
-					<Thumbnail
+					<MovieThumbnail
 						image={
 							movie.poster_path
 								? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`

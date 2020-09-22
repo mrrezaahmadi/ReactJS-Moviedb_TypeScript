@@ -4,7 +4,7 @@ import React from "react";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../constants/tmdb.config";
 
 // Components
-import Thumbnail from "../thumbnail/thumbnail.component";
+import MovieThumbnail from "../movie-thumbnail/movie-thumbnail.component";
 
 // Images
 import no_image from "../../assets/images/no_image.jpg";
@@ -13,9 +13,9 @@ import no_image from "../../assets/images/no_image.jpg";
 import "./movie-list.styles.scss";
 
 interface MovieListPropsTypes {
-	movies: any;
-	loading: boolean;
-    header: string;
+	movies?: any;
+	loading?: boolean;
+	header?: string;
 }
 
 const MovieList: React.FC<MovieListPropsTypes> = (props) => {
@@ -26,15 +26,15 @@ const MovieList: React.FC<MovieListPropsTypes> = (props) => {
 			<div className="movie-list-content">
 				{movies
 					.map((movie: any, i: number) => (
-						<Thumbnail
+						<MovieThumbnail
 							key={i}
 							image={
 								movie.poster_path
 									? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
 									: no_image
-                            }
-                            movieId={movie.id}
-                            movieName={movie.original_title}
+							}
+							movieId={movie.id}
+							movieName={movie.original_title}
 						/>
 					))
 					.map((movie: any, i: number) => (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import CastList from "../../components/cast-list/cast-list.component";
 import LoadingSpinner from "../../components/loading-spinner/loading-spinner.component";
 import MovieInfoBar from "../../components/movie-info-bar/movie-info-bar.component";
 import MovieInfo from "../../components/movie-info/movie-info.component";
+import MovieList from "../../components/movie-list/movie-list.component";
 
 import { API_KEY, API_URL } from "../../constants/tmdb.config";
 
@@ -60,7 +62,11 @@ const MoviePage: React.FC<MoviePagePropsTypes> = (props) => {
 					/>
 				</div>
 			) : null}
-			{cast ? <div className="movie-page-grid">this is cast member</div> : null}
+			{cast ? (
+				<div className="movie-page-grid">
+					<CastList header={"Cast"} cast={cast} />
+				</div>
+			) : null}
 			{!cast && !loading ? <h1>No movie found!</h1> : null}
 			{loading ? <LoadingSpinner /> : null}
 		</div>
