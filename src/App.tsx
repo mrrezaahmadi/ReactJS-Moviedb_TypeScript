@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+
+// Pages
+import Home from './pages/home-page/home-page.component'
+
 const App: React.FC = () => {
 	return(
 		<div>
+			<Home />
 			Hello world
 		</div>
 	)
