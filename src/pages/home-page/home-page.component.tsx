@@ -9,6 +9,9 @@ import {
 	BACKDROP_SIZE,
 } from "../../constants/tmdb.config";
 
+// Styles
+import './home-page.styles.scss'
+
 // Components
 import Poster from "../../components/poster/poster.component";
 import MovieList from "../../components/movie-list/movie-list.component";
