@@ -15,7 +15,7 @@ import "./movie-list.styles.scss";
 interface MovieListPropsTypes {
 	movies: any;
 	loading: boolean;
-	header: string;
+    header: string;
 }
 
 const MovieList: React.FC<MovieListPropsTypes> = (props) => {
@@ -32,7 +32,9 @@ const MovieList: React.FC<MovieListPropsTypes> = (props) => {
 								movie.poster_path
 									? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
 									: no_image
-							}
+                            }
+                            movieId={movie.id}
+                            movieName={movie.original_title}
 						/>
 					))
 					.map((movie: any, i: number) => (

@@ -1,18 +1,22 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home-page/home-page.component";
 
 // Components
 import Header from "./components/header/header.component";
+import MoviePage from "./pages/movie-page/movie-page.component";
 
 const App: React.FC = () => {
 	return (
-		<div>
+		<Router>
 			<Header />
-			<Home />
-		</div>
+			<Switch>
+				<Route path="/" component={Home} exact />
+				<Route path="/:movieId" component={MoviePage} exact />
+			</Switch>
+		</Router>
 	);
 };
 
