@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../components/loading-spinner/loading-spinner.component";
+import MovieInfoBar from "../../components/movie-info-bar/movie-info-bar.component";
 import MovieInfo from "../../components/movie-info/movie-info.component";
 
 import { API_KEY, API_URL } from "../../constants/tmdb.config";
 
 // Styles
-import './movie-page.styles.scss'
+import "./movie-page.styles.scss";
 
 interface MoviePagePropsTypes {
 	match: any;
@@ -52,6 +53,11 @@ const MoviePage: React.FC<MoviePagePropsTypes> = (props) => {
 			{movie ? (
 				<div>
 					<MovieInfo movie={movie} directors={directors} />
+					<MovieInfoBar
+						time={movie.runtime}
+						budget={movie.budget}
+						revenue={movie.revenue}
+					/>
 				</div>
 			) : null}
 			{cast ? <div className="movie-page-grid">this is cast member</div> : null}
