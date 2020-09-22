@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import "./thumbnail.styles.scss";
 
 interface ThumbnailPropsTypes {
-	image: string;
-	movieId: number;
-	movieName: string;
+	image?: any;
+	movieId?: number;
+	movieName?: string;
 }
 
 const Thumbnail: React.FC<ThumbnailPropsTypes> = (props) => {

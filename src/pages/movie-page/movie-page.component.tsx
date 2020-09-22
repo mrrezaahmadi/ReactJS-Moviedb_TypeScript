@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../components/loading-spinner/loading-spinner.component";
+import MovieInfo from "../../components/movie-info/movie-info.component";
 
 import { API_KEY, API_URL } from "../../constants/tmdb.config";
 
+// Styles
+import './movie-page.styles.scss'
+
 interface MoviePagePropsTypes {
-    match: any;
+	match: any;
 }
 
 const MoviePage: React.FC<MoviePagePropsTypes> = (props) => {
@@ -12,8 +16,8 @@ const MoviePage: React.FC<MoviePagePropsTypes> = (props) => {
 	const [cast, setCast] = useState<any>(null);
 	const [loading, setLoading] = useState<any>(false);
 	const [directors, setDirectors] = useState<any>([]);
-    const { movieId } = props.match.params;
-    
+	const { movieId } = props.match.params;
+
 	useEffect(() => {
 		let endPoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`;
 		fetchItems(endPoint);
@@ -45,7 +49,11 @@ const MoviePage: React.FC<MoviePagePropsTypes> = (props) => {
 
 	return (
 		<div className="movie-page">
-			{movie ? <div>Here we go</div> : null}
+			{movie ? (
+				<div>
+					<MovieInfo movie={movie} directors={directors} />
+				</div>
+			) : null}
 			{cast ? <div className="movie-page-grid">this is cast member</div> : null}
 			{!cast && !loading ? <h1>No movie found!</h1> : null}
 			{loading ? <LoadingSpinner /> : null}
