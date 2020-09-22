@@ -1,16 +1,48 @@
-import React from 'react'
-import './home-page.styles.scss'
+import React, { useState, useEffect } from "react";
+import "./home-page.styles.scss";
+
+// APIs
+import {
+	API_URL,
+	API_KEY,
+	IMAGE_BASE_URL,
+	BACKDROP_SIZE,
+} from "../../constants/tmdb.config";
 
 // Components
-import Header from '../../components/header/header.component'
+import Poster from "../../components/poster/poster.component";
 
 const Home: React.FC = () => {
-    return (
-        <div>
-            <Header />
-            This is Home Page
-        </div>
-    )
-}
+	const [movies, setMovies] = useState<any>([]);
+	const [poster, setPoster] = useState<any>(null);
 
-export default Home
+	useEffect(() => {
+		const endPoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+		fetchItems(endPoint);
+	}, []);
+
+	const fetchItems = (endPoint: string) => {
+		fetch(endPoint)
+			.then((result) => result.json())
+			.then((result) => {
+				setMovies([...movies, ...result.results]);
+				setPoster(poster || result.results[0]);
+			});
+	};
+
+	return (
+		<div className="Home">
+			{poster ? (
+				<div>
+					<Poster
+						image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${poster.backdrop_path}`}
+						title={poster.original_size}
+						text={poster.overview}
+					/>
+				</div>
+			) : null}
+		</div>
+	);
+};
+
+export default Home;
