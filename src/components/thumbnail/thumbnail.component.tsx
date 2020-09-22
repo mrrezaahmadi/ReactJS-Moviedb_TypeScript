@@ -1,14 +1,19 @@
 import React from "react";
 
+// Styles
+import "./thumbnail.styles.scss";
+
 interface ThumbnailPropsTypes {
 	image: string;
-	movieId: any;
-	movieName: string;
 }
 
 const Thumbnail: React.FC<ThumbnailPropsTypes> = (props) => {
-	const { image, movieId, movieName } = props;
-	return <div>this is Thumbnail</div>;
+	const { image } = props;
+	return (
+		<div className="movie-thumbnail">
+			<img src={image} alt={"movieThumb"} />
+		</div>
+	);
 };
 
 export default Thumbnail;
