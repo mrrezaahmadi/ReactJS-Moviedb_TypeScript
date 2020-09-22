@@ -11,6 +11,7 @@ import {
 
 // Components
 import Poster from "../../components/poster/poster.component";
+import MovieList from "../../components/movie-list/movie-list.component";
 
 const Home: React.FC = () => {
 	const [movies, setMovies] = useState<any>([]);
@@ -41,6 +42,9 @@ const Home: React.FC = () => {
 					/>
 				</div>
 			) : null}
+			<div className="movie-list-grid">
+				<MovieList movies={movies} />
+			</div>
 		</div>
 	);
 };
