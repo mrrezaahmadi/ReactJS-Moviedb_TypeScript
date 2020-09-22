@@ -16,12 +16,14 @@ import "./home-page.styles.scss";
 import Poster from "../../components/poster/poster.component";
 import MovieList from "../../components/movie-list/movie-list.component";
 import LoadMoreBtn from "../../components/load-more-button/load-more-btn.component";
+import LoadingSpinner from "../../components/loading-spinner/loading-spinner.component";
 
 const Home: React.FC = () => {
 	const [movies, setMovies] = useState<any>([]);
 	const [poster, setPoster] = useState<any>(null);
 	const [currentPage, setCurrentPage] = useState<any>(0);
 	const [totalPages, setTotalPages] = useState<any>(0);
+	const [loading, setLoading] = useState<any>(false);
 
 	useEffect(() => {
 		const endPoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -36,6 +38,7 @@ const Home: React.FC = () => {
 				setPoster(poster || result.results[0]);
 				setCurrentPage(result.page);
 				setTotalPages(result.total_pages);
+				setLoading(false);
 			});
 	};
 
@@ -58,8 +61,9 @@ const Home: React.FC = () => {
 				</div>
 			) : null}
 			<div className="movie-list-grid">
-				<MovieList movies={movies} />
-				{currentPage <= totalPages ? (
+				<MovieList movies={movies} loading={loading} />
+				{loading ? <LoadingSpinner /> : null}
+				{currentPage <= totalPages && !loading ? (
 					<LoadMoreBtn loadMoreButtonHandler={loadMoreItems} />
 				) : null}
 			</div>

@@ -12,7 +12,6 @@ const App: React.FC = () => {
 		<div>
 			<Header />
 			<Home />
-			Hello world
 		</div>
 	);
 };

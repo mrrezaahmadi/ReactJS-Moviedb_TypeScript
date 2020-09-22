@@ -13,11 +13,12 @@ import no_image from "../../assets/images/no_image.jpg";
 import './movie-list.styles.scss'
 
 interface MovieListPropsTypes {
-	movies: any;
+    movies: any;
+    loading: boolean;
 }
 
 const MovieList: React.FC<MovieListPropsTypes> = (props) => {
-	const { movies } = props;
+	const { movies, loading } = props;
 	return (
 		<div className="movie-list">
 			<div className="movie-list-content">
