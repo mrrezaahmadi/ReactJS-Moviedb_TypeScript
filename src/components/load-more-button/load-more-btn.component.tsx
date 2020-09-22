@@ -11,7 +11,7 @@ const LoadMoreBtn: React.FC<LoadMoreBtnPropsTypes> = (props) => {
 	const { loadMoreButtonHandler } = props;
 	return (
 		<div className="load-more-btn" onClick={loadMoreButtonHandler}>
-			<p>Load More Movies ...</p>
+			<p>Load More</p>
 		</div>
 	);
 };

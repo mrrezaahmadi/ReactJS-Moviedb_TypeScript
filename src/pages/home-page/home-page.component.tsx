@@ -41,15 +41,16 @@ const Home: React.FC = () => {
 				setCurrentPage(result.page);
 				setTotalPages(result.total_pages);
 				setLoading(false);
-			});
+			})
+			.catch((error) => console.error("Error:", error));
 	};
 
-	const onSearchHandler = (searchTerm: string) => {
+	const onSearchHandler = (e: any) => {
 		let endpoint = "";
 
 		setMovies([]);
+		setSearchTerm(e.target.value);
 		setLoading(true);
-		setSearchTerm(searchTerm);
 
 		if (searchTerm === "") {
 			endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;

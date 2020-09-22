@@ -1,23 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Libraries
 import FontAwesome from "react-fontawesome";
 
 // Styles
-import './searchbar.styles.scss'
+import "./searchbar.styles.scss";
 
 interface SearchBarPropsTypes {
-	onSearchHandler: (value: string) => void;
+	onSearchHandler: (e: any) => void;
 }
 
 const SearchBar: React.FC<SearchBarPropsTypes> = (props) => {
 	const { onSearchHandler } = props;
-	const [value, setValue] = useState<any>("");
 
-	const inputSearchHandler = (e: any) => {
-		setValue(e.target.value);
-		onSearchHandler(value);
-	};
 	return (
 		<div className="search-bar">
 			<div className="search-bar-content">
@@ -26,8 +21,7 @@ const SearchBar: React.FC<SearchBarPropsTypes> = (props) => {
 					type="text"
 					className="search-bar-input"
 					placeholder="Search ..."
-					onChange={inputSearchHandler}
-					value={value}
+					onChange={onSearchHandler}
 				/>
 			</div>
 		</div>
