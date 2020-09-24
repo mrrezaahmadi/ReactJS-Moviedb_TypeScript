@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ReactJS-Moviedb_TypeScript/static/css/main.275b2b0e.chunk.css",
-    "main.js": "/ReactJS-Moviedb_TypeScript/static/js/main.2909d94d.chunk.js",
-    "main.js.map": "/ReactJS-Moviedb_TypeScript/static/js/main.2909d94d.chunk.js.map",
+    "main.js": "/ReactJS-Moviedb_TypeScript/static/js/main.703b1041.chunk.js",
+    "main.js.map": "/ReactJS-Moviedb_TypeScript/static/js/main.703b1041.chunk.js.map",
     "runtime-main.js": "/ReactJS-Moviedb_TypeScript/static/js/runtime-main.0926d48f.js",
     "runtime-main.js.map": "/ReactJS-Moviedb_TypeScript/static/js/runtime-main.0926d48f.js.map",
     "static/js/2.e5cef3f6.chunk.js": "/ReactJS-Moviedb_TypeScript/static/js/2.e5cef3f6.chunk.js",
     "static/js/2.e5cef3f6.chunk.js.map": "/ReactJS-Moviedb_TypeScript/static/js/2.e5cef3f6.chunk.js.map",
     "index.html": "/ReactJS-Moviedb_TypeScript/index.html",
-    "precache-manifest.7205956ee41c1b98fbd1dbc5cd71d129.js": "/ReactJS-Moviedb_TypeScript/precache-manifest.7205956ee41c1b98fbd1dbc5cd71d129.js",
+    "precache-manifest.675629bc2ea41cc86bb5b9670612569b.js": "/ReactJS-Moviedb_TypeScript/precache-manifest.675629bc2ea41cc86bb5b9670612569b.js",
     "service-worker.js": "/ReactJS-Moviedb_TypeScript/service-worker.js",
     "static/css/main.275b2b0e.chunk.css.map": "/ReactJS-Moviedb_TypeScript/static/css/main.275b2b0e.chunk.css.map",
     "static/js/2.e5cef3f6.chunk.js.LICENSE.txt": "/ReactJS-Moviedb_TypeScript/static/js/2.e5cef3f6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0926d48f.js",
     "static/js/2.e5cef3f6.chunk.js",
     "static/css/main.275b2b0e.chunk.css",
-    "static/js/main.2909d94d.chunk.js"
+    "static/js/main.703b1041.chunk.js"
   ]
 }
