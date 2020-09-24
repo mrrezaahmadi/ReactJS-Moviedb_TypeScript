@@ -11,7 +11,7 @@ import tmdb_logo from "../../assets/images/tmdb_logo.png";
 const Header: React.FC = () => (
 	<div className="Header">
 		<div className="header-content">
-			<Link to={"/"}>
+			<Link to={"/ReactJS-Moviedb_TypeScript"}>
 				<img src={logo} className="logo" alt="logo" />
 			</Link>
 			<img src={tmdb_logo} className="tmdb-logo" alt="tmdb-logo" />

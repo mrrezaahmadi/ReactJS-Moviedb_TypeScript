@@ -14,7 +14,7 @@ const App: React.FC = () => {
 		<Router>
 			<Header />
 			<Switch>
-				<Route path="/" component={Home} exact />
+				<Route path="/ReactJS-Moviedb_TypeScript/" component={Home} exact/>
 				<Route path="/:movieId" component={MoviePage} exact />
 				<Route component={NotFound} />
 			</Switch>
